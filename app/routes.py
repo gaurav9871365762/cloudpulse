@@ -28,6 +28,12 @@ def api_status():
     })
 
 
+@main_bp.route("/login", methods=["GET"])
+def login_page():
+    """Render the login page."""
+    return render_template("login.html", stage="email", email="", error=None)
+
+
 @main_bp.route("/metrics", methods=["GET"])
 def get_metrics():
     """Endpoint to retrieve API metrics."""
